@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="LocalCortex app icon">
+  <title>LocalCortex</title>
+  <defs>
+    <linearGradient id="lc-tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="0.55" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#4C1D95"/>
+    </linearGradient>
+    <radialGradient id="lc-sheen" cx="0.28" cy="0.22" r="0.85">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.30"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0.00"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Full-bleed gradient tile (corners masked by consumer via border-radius) -->
+  <rect x="0" y="0" width="1024" height="1024" fill="url(#lc-tile)"/>
+  <rect x="0" y="0" width="1024" height="1024" fill="url(#lc-sheen)"/>
+
+  <!-- Subtle lens tint -->
+  <circle cx="322" cy="530" r="148" fill="#FFFFFF" fill-opacity="0.12"/>
+  <circle cx="702" cy="530" r="148" fill="#FFFFFF" fill-opacity="0.12"/>
+
+  <!-- Glassy reflection arcs (amber, upper-left of each lens) -->
+  <g fill="none" stroke="#FBBF24" stroke-width="14" stroke-linecap="round" stroke-opacity="0.85">
+    <path d="M 250 478 A 120 120 0 0 1 284 446"/>
+    <path d="M 630 478 A 120 120 0 0 1 664 446"/>
+  </g>
+
+  <!-- Frame: lenses + bridge + temples -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="32" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="322" cy="530" r="148"/>
+    <circle cx="702" cy="530" r="148"/>
+    <path d="M 470 492 Q 512 452 554 492"/>
+    <path d="M 178 506 C 168 440 196 384 250 356"/>
+    <path d="M 846 506 C 856 440 828 384 774 356"/>
+  </g>
+</svg>

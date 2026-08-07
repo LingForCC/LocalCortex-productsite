@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 180" width="360" height="180" role="img" aria-label="LocalCortex">
+  <title>LocalCortex</title>
+  <defs>
+    <linearGradient id="lc-mark-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="0.55" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#4C1D95"/>
+    </linearGradient>
+    <!-- Soft top-left sheen on the tile -->
+    <radialGradient id="lc-sheen" cx="0.28" cy="0.22" r="0.85">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.30"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0.00"/>
+    </radialGradient>
+    <!-- Small glasses tile for the inline wordmark -->
+    <clipPath id="lc-squircle">
+      <rect x="0" y="10" width="160" height="160" rx="36" ry="36"/>
+    </clipPath>
+  </defs>
+
+  <!-- Squircle icon tile -->
+  <g clip-path="url(#lc-squircle)">
+    <rect x="0" y="10" width="160" height="160" fill="url(#lc-mark-grad)"/>
+    <rect x="0" y="10" width="160" height="160" fill="url(#lc-sheen)"/>
+    <!-- Scaled glasses emblem inside the tile -->
+    <g transform="translate(0,10) scale(0.15625)">
+      <circle cx="322" cy="530" r="148" fill="#FFFFFF" fill-opacity="0.12"/>
+      <circle cx="702" cy="530" r="148" fill="#FFFFFF" fill-opacity="0.12"/>
+      <g fill="none" stroke="#FBBF24" stroke-width="14" stroke-linecap="round" stroke-opacity="0.85">
+        <path d="M 250 478 A 120 120 0 0 1 284 446"/>
+        <path d="M 630 478 A 120 120 0 0 1 664 446"/>
+      </g>
+      <g fill="none" stroke="#FFFFFF" stroke-width="32" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="322" cy="530" r="148"/>
+        <circle cx="702" cy="530" r="148"/>
+        <path d="M 470 492 Q 512 452 554 492"/>
+        <path d="M 178 506 C 168 440 196 384 250 356"/>
+        <path d="M 846 506 C 856 440 828 384 774 356"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="180" y="113" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif"
+        font-size="58" font-weight="600" fill="#2C3138" letter-spacing="-1">LocalCortex</text>
+</svg>

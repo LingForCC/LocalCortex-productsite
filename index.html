@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalCortex — Your tasks. Your real project folders.</title>
+  <meta name="description" content="LocalCortex is a native macOS and iOS task manager built around Efforts — each Effort pairs a task list with a real folder on disk. Built for people who work alongside coding agents.">
+  <meta name="theme-color" content="#6366F1">
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LocalCortex — Your tasks. Your real project folders.">
+  <meta property="og:description" content="A native Mac and iOS task manager where every project pairs a task list with a real folder on disk. CloudKit sync, a first-class agent surface, and you own your files.">
+  <meta property="og:image" content="assets/icon.svg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================================================= -->
+<!-- NAV                                                            -->
+<!-- ============================================================= -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top" aria-label="LocalCortex home">
+      <img src="assets/favicon.svg" alt="" class="nav__logo" width="32" height="32">
+      <span class="nav__wordmark">LocalCortex</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#agent">For agents</a>
+      <a href="#download">Download</a>
+    </nav>
+
+    <a class="btn btn--primary btn--sm nav__cta"
+       href="#download" data-testflight>Join the TestFlight</a>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMobile">
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="nav__mobile" id="navMobile" hidden>
+    <a href="#features">Features</a>
+    <a href="#agent">For agents</a>
+    <a href="#download">Download</a>
+    <a class="btn btn--primary" href="#download" data-testflight>Join the TestFlight</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- =========================================================== -->
+  <!-- HERO                                                        -->
+  <!-- =========================================================== -->
+  <section class="hero" id="top">
+    <div class="hero__inner">
+      <div class="hero__text">
+        <img src="assets/icon.svg" alt="LocalCortex app icon" class="hero__icon" width="96" height="96">
+        <h1 class="hero__title">Your tasks.<br>Your real project folders.</h1>
+        <p class="hero__sub">
+          LocalCortex is a native Mac &amp; iOS task manager built around
+          <strong>Efforts</strong> — each one pairs a task list with a real folder on
+          disk. CloudKit keeps everything in sync, you own every byte, and there's a
+          first-class surface for the coding agents you work with.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="#download" data-testflight>Join the TestFlight</a>
+          <a class="btn btn--ghost btn--lg" href="#features">See the features</a>
+        </div>
+        <p class="hero__meta">macOS 26.5+ &nbsp;·&nbsp; iOS 18+ &nbsp;·&nbsp; CloudKit sync</p>
+      </div>
+
+      <!-- Hero visual drop-zone (Mac + iPhone collage). See assets/screenshots/README.md -->
+      <figure class="hero__visual shot shot--hero" data-caption="LocalCortex across Mac, iPad, and iPhone">
+        <div class="shot__placeholder shot__placeholder--collage">
+          <span class="shot__label">LocalCortex</span>
+          <span class="shot__hint">Hero collage · Mac + iPad + iPhone</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- =========================================================== -->
+  <!-- FEATURE SECTIONS                                            -->
+  <!-- =========================================================== -->
+  <div id="features"></div>
+
+  <!-- Efforts -->
+  <section class="feature" id="efforts" aria-labelledby="efforts-title">
+    <div class="feature__inner">
+      <div class="feature__text">
+        <p class="eyebrow">Efforts</p>
+        <h2 class="feature__title" id="efforts-title">A project's tasks and its folder, linked.</h2>
+        <p class="feature__lede">
+          An <strong>Effort</strong> is more than a project name. It's a task list
+          <em>and</em> a real directory on disk. Create an Effort and LocalCortex
+          materializes the folder — your code, notes, and assets live right there.
+        </p>
+        <div class="feature__points">
+          <div class="point">
+            <h3>One link, two halves</h3>
+            <p>The task list tracks what to do; the folder holds the work. LocalCortex
+              keeps the link between them and never copies your files anywhere.</p>
+          </div>
+          <div class="point">
+            <h3>You pick the root</h3>
+            <p>Choose a root folder in Settings. Each Effort gets a stable subfolder
+              under it, so paths stay predictable across machines.</p>
+          </div>
+        </div>
+      </div>
+
+      <figure class="feature__visual shot shot--mac" data-caption="Efforts — Mac">
+        <div class="shot__placeholder">
+          <span class="shot__label">Efforts</span>
+          <span class="shot__hint">Mac · 1440×900</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Tasks -->
+  <section class="feature feature--alt" id="tasks" aria-labelledby="tasks-title">
+    <div class="feature__inner">
+      <figure class="feature__visual shot shot--mac" data-caption="Task detail — Mac">
+        <div class="shot__placeholder">
+          <span class="shot__label">Task detail</span>
+          <span class="shot__hint">Mac · 1440×900</span>
+        </div>
+      </figure>
+
+      <div class="feature__text">
+        <p class="eyebrow">Tasks</p>
+        <h2 class="feature__title" id="tasks-title">GTD-style tasks that fit how you actually work.</h2>
+        <p class="feature__lede">
+          Every Task carries a clear status, defer and due dates, recurrence, nested
+          subtasks, notes, a Today focus flag, and a marker for who's working on it —
+          you or an agent.
+        </p>
+        <div class="feature__points">
+          <div class="point">
+            <h3>Four clean statuses</h3>
+            <p>Open, In Progress, Completed, Blocked. Completing a parent finishes the
+              whole subtree; reopening a child reopens its ancestors.</p>
+          </div>
+          <div class="point">
+            <h3>Defer, due, repeat</h3>
+            <p>Recurring tasks with weekday-aware patterns — “every Wednesday”, “last
+              Sunday of the month” — on a fixed or after-completion basis.</p>
+          </div>
+          <div class="point">
+            <h3>Today, on your terms</h3>
+            <p>A manual Today flag surfaces what matters now, independent of due dates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three-pane workspace -->
+  <section class="feature" id="workspace" aria-labelledby="workspace-title">
+    <div class="feature__inner">
+      <div class="feature__text">
+        <p class="eyebrow">The workspace</p>
+        <h2 class="feature__title" id="workspace-title">A native three-pane that adapts to every screen.</h2>
+        <p class="feature__lede">
+          Sidebar, task list, detail — the layout you expect from a Mac app, with an
+          iPad that grows into it and an iPhone that moves between them with a push.
+        </p>
+        <div class="feature__points">
+          <div class="point">
+            <h3>Built in SwiftUI</h3>
+            <p>Three columns on Mac and iPad, a single adaptive stack on iPhone. Same
+              models, same sync, genuinely native on each.</p>
+          </div>
+          <div class="point">
+            <h3>Drag, drop, reorder</h3>
+            <p>Reorder tasks, reparent subtasks, and move work across Efforts with drag
+              and drop on macOS.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Platform tabs: Mac / iOS -->
+      <figure class="feature__visual shot shot--tabbed" data-caption="Three-pane workspace">
+        <div class="shot__tabs" role="tablist" aria-label="Workspace platform">
+          <button class="shot__tab is-active" role="tab" aria-selected="true" data-platform="mac">Mac</button>
+          <button class="shot__tab" role="tab" aria-selected="false" data-platform="ios">iPad / iPhone</button>
+        </div>
+        <div class="shot shot--mac shot__panel is-active" data-panel="mac">
+          <div class="shot__placeholder">
+            <span class="shot__label">Three-pane</span>
+            <span class="shot__hint">Mac · 1440×900</span>
+          </div>
+        </div>
+        <div class="shot shot--ios shot__panel" data-panel="ios" hidden>
+          <div class="shot__placeholder">
+            <span class="shot__label">Three-pane</span>
+            <span class="shot__hint">iPad · 1366×1024</span>
+          </div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Sync -->
+  <section class="feature feature--alt" id="sync" aria-labelledby="sync-title">
+    <div class="feature__inner">
+      <figure class="feature__visual shot shot--ios" data-caption="Sync across devices">
+        <div class="shot__placeholder">
+          <span class="shot__label">Synced everywhere</span>
+          <span class="shot__hint">iPhone · 1170×2532</span>
+        </div>
+      </figure>
+
+      <div class="feature__text">
+        <p class="eyebrow">CloudKit sync</p>
+        <h2 class="feature__title" id="sync-title">Structured data syncs. You own the bytes.</h2>
+        <p class="feature__lede">
+          Efforts and Tasks sync across your Mac, iPhone, and iPad through CloudKit —
+          private to your account, no servers of ours in the middle. Files are a
+          separate, deliberate choice.
+        </p>
+        <div class="feature__points">
+          <div class="point">
+            <h3>Bring your own sync</h3>
+            <p>Want the folders to travel too? Point the Efforts root at iCloud Drive,
+              Dropbox, or Google Drive. LocalCortex never syncs file bytes itself.</p>
+          </div>
+          <div class="point">
+            <h3>Honest when it's off</h3>
+            <p>If sync can't reach CloudKit, the app says so plainly in Settings rather
+              than silently going quiet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT SURFACE (the differentiator) -->
+  <section class="feature feature--agent" id="agent" aria-labelledby="agent-title">
+    <div class="feature__inner">
+      <div class="feature__text">
+        <p class="eyebrow eyebrow--accent">For coding agents</p>
+        <h2 class="feature__title" id="agent-title">Your agents can read your tasks and find your files.</h2>
+        <p class="feature__lede">
+          LocalCortex exposes a first-class automation surface on macOS. Claude Code,
+          Codex, and other agents can list and update your tasks, claim work, and
+          resolve an Effort's folder path — then use their own tools to read and edit
+          your project. <strong>File bytes never cross the boundary.</strong>
+        </p>
+
+        <ul class="tool-grid" aria-label="Agent tools">
+          <li><code>efforts_list</code><span>List all Efforts</span></li>
+          <li><code>tasks_list</code><span>Summaries per Effort</span></li>
+          <li><code>tasks_get</code><span>Full task detail</span></li>
+          <li><code>files_path</code><span>Resolve a folder path</span></li>
+          <li><code>tasks_create</code><span>Add a task</span></li>
+          <li><code>tasks_update</code><span>Patch fields, claim work</span></li>
+          <li><code>tasks_complete</code><span>Finish or reopen</span></li>
+        </ul>
+
+        <div class="feature__points">
+          <div class="point">
+            <h3>Two surfaces, full parity</h3>
+            <p>An in-app <strong>MCP server</strong> (Streamable HTTP, opt-in) and an
+              always-on <strong>AppleScript / JXA</strong> suite. Both call the same
+              store the UI uses, so there's a single writer by construction.</p>
+          </div>
+          <div class="point">
+            <h3>Sane trust model</h3>
+            <p>The write surface is tasks-only — no Effort create/delete, no file
+              mutation, no task deletion. The AppleScript surface is TCC-gated per
+              sender; MCP rejects non-localhost origins.</p>
+          </div>
+        </div>
+      </div>
+
+      <figure class="feature__visual shot shot--code" data-caption="Agent surface — terminal">
+        <div class="shot__placeholder shot__placeholder--code">
+<pre><span class="c"># List efforts from the shell</span>
+osascript -l JavaScript <span class="s">-e</span> \
+  <span class="s">'const a=Application("LocalCortex");</span>
+<span class="s">   a.listEfforts()'</span>
+
+<span class="c"># Or register the MCP server</span>
+claude mcp add <span class="s">--transport</span> http \
+  localcortex http://127.0.0.1:7878/mcp</pre>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Quick find -->
+  <section class="feature feature--alt" id="quickfind" aria-labelledby="quickfind-title">
+    <div class="feature__inner">
+      <div class="feature__text">
+        <p class="eyebrow">Quick Find &amp; smart lists</p>
+        <h2 class="feature__title" id="quickfind-title">Find anything in a keystroke.</h2>
+        <p class="feature__lede">
+          Press <kbd>⌘</kbd><kbd>O</kbd> to search across every Effort and open task.
+          The sidebar's smart lists — Today, Anytime, All Tasks — keep the view you
+          want one tap away.
+        </p>
+        <div class="feature__points">
+          <div class="point">
+            <h3>Smart lists</h3>
+            <p>Today, Anytime, and All Tasks, plus Hide Completed and Hide Deferred
+              filters to keep the noise down.</p>
+          </div>
+          <div class="point">
+            <h3>Global search</h3>
+            <p>One field, every task, every Effort — results as you type.</p>
+          </div>
+        </div>
+      </div>
+
+      <figure class="feature__visual shot shot--mac" data-caption="Quick Find — Mac">
+        <div class="shot__placeholder">
+          <span class="shot__label">Quick Find</span>
+          <span class="shot__hint">Mac · 1440×900</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- =========================================================== -->
+  <!-- SMALL THINGS GRID                                           -->
+  <!-- =========================================================== -->
+  <section class="small-things" aria-labelledby="small-title">
+    <div class="small-things__inner">
+      <h2 class="section-title" id="small-title">And all the small things.</h2>
+      <p class="section-lede">The details that make a task manager feel finished.</p>
+
+      <ul class="grid">
+        <li class="grid__item">
+          <h3>Recurring tasks</h3>
+          <p>Daily, weekly, monthly, yearly — with weekday-aware patterns.</p>
+        </li>
+        <li class="grid__item">
+          <h3>Subtask cascades</h3>
+          <p>Complete a parent to finish the tree; reopen a child to wake its ancestors.</p>
+        </li>
+        <li class="grid__item">
+          <h3>Drag &amp; drop</h3>
+          <p>Reorder, reparent, and move tasks between Efforts on macOS.</p>
+        </li>
+        <li class="grid__item">
+          <h3>Worker markers</h3>
+          <p>See at a glance whether a task is yours, an agent's, or unclaimed.</p>
+        </li>
+        <li class="grid__item">
+          <h3>Full dark mode</h3>
+          <p>Light and dark themes that track the system, tuned for long sessions.</p>
+        </li>
+        <li class="grid__item">
+          <h3>Built in Swift 6</h3>
+          <p>Strict concurrency, SwiftData, and SwiftUI — modern and native to the core.</p>
+        </li>
+        <li class="grid__item">
+          <h3>Stable Effort colors</h3>
+          <p>Each Effort gets a deterministic hue, consistent across devices.</p>
+        </li>
+        <li class="grid__item">
+          <h3>Reminders</h3>
+          <p>Timely nudges so a due date never slips past unnoticed.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================================================== -->
+  <!-- DOWNLOAD                                                    -->
+  <!-- =========================================================== -->
+  <section class="download" id="download" aria-labelledby="download-title">
+    <div class="download__inner">
+      <h2 class="section-title" id="download-title">Get LocalCortex.</h2>
+      <p class="section-lede">In TestFlight now. Coming soon to the App Store.</p>
+
+      <div class="platforms">
+        <!--
+          TESTFLIGHT PLACEHOLDER
+          Replace the href below (and every [data-testflight] link picks it up via
+          js/main.js TESTFLIGHT_URL). When the App Store ships, swap for store URLs.
+        -->
+        <article class="platform">
+          <div class="platform__icon platform__icon--mac" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M2 5.5a2 2 0 0 1 2-2h6.5v6.2H2V5.5Zm0 5.7h8.5V20.5H4a2 2 0 0 1-2-2v-7.3Zm10-7.7H20a2 2 0 0 1 2 2v4.2h-8.5V3.5Zm0 7.7H22v7.3a2 2 0 0 1-2 2h-7.5v-9.3Z"/></svg>
+          </div>
+          <h3 class="platform__name">For Mac</h3>
+          <p class="platform__req">macOS 26.5 or later</p>
+          <p class="platform__note">Three-pane workspace, folders, and the agent surface.</p>
+          <a class="btn btn--store" href="#" data-testflight>
+            <span class="btn__store-top">Coming Soon</span>
+            <span class="btn__store-bottom">Join TestFlight</span>
+          </a>
+        </article>
+
+        <article class="platform">
+          <div class="platform__icon platform__icon--ios" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm3 17a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2h-4Z"/></svg>
+          </div>
+          <h3 class="platform__name">For iPhone</h3>
+          <p class="platform__req">iOS 18 or later</p>
+          <p class="platform__note">Efforts and tasks in your pocket, synced over CloudKit.</p>
+          <a class="btn btn--store" href="#" data-testflight>
+            <span class="btn__store-top">Coming Soon</span>
+            <span class="btn__store-bottom">Join TestFlight</span>
+          </a>
+        </article>
+
+        <article class="platform">
+          <div class="platform__icon platform__icon--ios" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M3 4h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-6l.7 3h1.8a.5.5 0 0 1 0 1H6.5a.5.5 0 0 1 0-1h1.8L9 17H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"/></svg>
+          </div>
+          <h3 class="platform__name">For iPad</h3>
+          <p class="platform__req">iPadOS 18 or later</p>
+          <p class="platform__note">The full three-pane layout, scaled up.</p>
+          <a class="btn btn--store" href="#" data-testflight>
+            <span class="btn__store-top">Coming Soon</span>
+            <span class="btn__store-bottom">Join TestFlight</span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================= -->
+<!-- FOOTER                                                        -->
+<!-- ============================================================= -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__col footer__col--brand">
+      <a class="footer__brand" href="#top">
+        <img src="assets/favicon.svg" alt="" class="footer__logo" width="28" height="28">
+        <span>LocalCortex</span>
+      </a>
+      <p class="footer__tag">Your tasks. Your real project folders.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#agent">For agents</a></li>
+        <li><a href="#download">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="https://github.com/LingForCC/LocalCortex---Swift" rel="noopener">GitHub</a></li>
+        <li><a href="#download">TestFlight</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p>© <span id="year">2026</span> LocalCortex. All rights reserved.</p>
+    <p class="footer__made">Made for people who work with agents.</p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

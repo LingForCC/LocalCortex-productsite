@@ -1,0 +1,8 @@
+# ZCode session / plan metadata
+.zcode/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
