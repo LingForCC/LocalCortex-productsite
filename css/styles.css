@@ -381,6 +381,22 @@ code, kbd, pre { font-family: var(--mono); }
 .shot__tab.is-active { background: var(--bg-elevated); color: var(--text); box-shadow: var(--shadow-sm); }
 .shot__panel:not(.is-active) { display: none; }
 
+/* Feature audience tabs (For Human / For Agent) */
+.feature-tabs-wrap { padding: 0 24px 38px; }
+.feature-tabs {
+  display: flex; justify-content: center; gap: 4px;
+  background: var(--bg-tinted); border: 1px solid var(--border);
+  border-radius: 999px; padding: 4px;
+  width: max-content; margin: 0 auto;
+}
+.feature-tab {
+  padding: 10px 30px; border-radius: 999px;
+  font-size: .95rem; font-weight: 600; color: var(--text-muted);
+  transition: background .2s ease, color .2s ease;
+}
+.feature-tab.is-active { background: var(--bg-elevated); color: var(--text); box-shadow: var(--shadow-sm); }
+.feature-panel[hidden] { display: none; }
+
 /* =================================================================
    SECTION TITLES
    ================================================================= */

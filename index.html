@@ -18,7 +18,7 @@
   <link rel="apple-touch-icon" href="assets/icon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=2">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -91,9 +91,17 @@
   </section>
 
   <!-- =========================================================== -->
-  <!-- FEATURE SECTIONS                                            -->
+  <!-- FEATURE SECTIONS: For Human / For Agent tabs                -->
   <!-- =========================================================== -->
-  <div id="features"></div>
+  <div class="feature-tabs-wrap">
+    <div class="feature-tabs" id="features" role="tablist" aria-label="Feature audience">
+      <button class="feature-tab" id="features-tab-human" role="tab" aria-selected="true" aria-controls="features-panel-human">For Human</button>
+      <button class="feature-tab" id="features-tab-agent" role="tab" aria-selected="false" aria-controls="features-panel-agent" tabindex="-1">For Agent</button>
+    </div>
+  </div>
+
+  <!-- Panel: features for humans -->
+  <div class="feature-panel" id="features-panel-human" role="tabpanel" aria-labelledby="features-tab-human">
 
   <!-- Efforts -->
   <section class="feature" id="efforts" aria-labelledby="efforts-title">
@@ -191,69 +199,8 @@
             <p>Want the folders to travel too? Point the Efforts root at iCloud Drive,
               Dropbox, or Google Drive. LocalCortex never syncs file bytes itself.</p>
           </div>
-          <div class="point">
-            <h3>Honest when it's off</h3>
-            <p>If sync can't reach CloudKit, the app says so plainly in Settings rather
-              than silently going quiet.</p>
-          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- AGENT SURFACE (the differentiator) -->
-  <section class="feature feature--agent" id="agent" aria-labelledby="agent-title">
-    <div class="feature__inner">
-      <div class="feature__text">
-        <p class="eyebrow eyebrow--accent">For coding agents</p>
-        <h2 class="feature__title" id="agent-title">Your agents can read your tasks and find your files.</h2>
-        <p class="feature__lede">
-          LocalCortex exposes a first-class automation surface on macOS. Claude Code,
-          Codex, and other agents can list and update your tasks, claim work, and
-          resolve an Effort's folder path — then use their own tools to read and edit
-          your project. <strong>File bytes never cross the boundary.</strong>
-        </p>
-
-        <ul class="tool-grid" aria-label="Agent tools">
-          <li><code>efforts_list</code><span>List all Efforts</span></li>
-          <li><code>tasks_list</code><span>Summaries per Effort</span></li>
-          <li><code>tasks_get</code><span>Full task detail</span></li>
-          <li><code>files_path</code><span>Resolve a folder path</span></li>
-          <li><code>tasks_create</code><span>Add a task</span></li>
-          <li><code>tasks_update</code><span>Patch fields, claim work</span></li>
-          <li><code>tasks_complete</code><span>Finish or reopen</span></li>
-        </ul>
-
-        <div class="feature__points">
-          <div class="point">
-            <h3>One surface, full parity</h3>
-            <p>An always-on <strong>JXA Automation</strong> surface (AppleScript /
-              JavaScript for Automation) drives the same store the UI uses, so there's
-              a single writer by construction — every agent command and every click lands
-              in one consistent state.</p>
-          </div>
-          <div class="point">
-            <h3>Sane trust model</h3>
-            <p>The write surface is tasks-only — no Effort create/delete, no file
-              mutation, no task deletion. The JXA Automation surface is TCC-gated per
-              sender, so macOS asks before any agent is allowed in.</p>
-          </div>
-        </div>
-      </div>
-
-      <figure class="feature__visual shot shot--code" data-caption="Agent surface — terminal">
-        <div class="shot__placeholder shot__placeholder--code">
-<pre><span class="c"># List efforts from the shell via JXA</span>
-osascript -l JavaScript <span class="s">-e</span> \
-  <span class="s">'const a=Application("LocalCortex");</span>
-<span class="s">   a.listEfforts()'</span>
-
-<span class="c"># Create a task in an Effort</span>
-osascript -l JavaScript <span class="s">-e</span> \
-  <span class="s">'const a=Application("LocalCortex");</span>
-<span class="s">   a.createTask("Ship the brief", {effort:"August Launch"})'</span></pre>
-        </div>
-      </figure>
     </div>
   </section>
 
@@ -334,7 +281,67 @@ osascript -l JavaScript <span class="s">-e</span> \
       </ul>
     </div>
   </section>
+  </div><!-- /features-panel-human -->
 
+  <!-- Panel: features for agents -->
+  <div class="feature-panel" id="features-panel-agent" role="tabpanel" aria-labelledby="features-tab-agent" hidden>
+
+  <!-- AGENT SURFACE (the differentiator) -->
+  <section class="feature feature--agent" id="agent" aria-labelledby="agent-title">
+    <div class="feature__inner">
+      <div class="feature__text">
+        <p class="eyebrow eyebrow--accent">For coding agents</p>
+        <h2 class="feature__title" id="agent-title">Your agents can read your tasks and find your files.</h2>
+        <p class="feature__lede">
+          LocalCortex exposes a first-class automation surface on macOS. Claude Code,
+          Codex, and other agents can list and update your tasks, claim work, and
+          resolve an Effort's folder path — then use their own tools to read and edit
+          your project. <strong>File bytes never cross the boundary.</strong>
+        </p>
+
+        <ul class="tool-grid" aria-label="Agent tools">
+          <li><code>efforts_list</code><span>List all Efforts</span></li>
+          <li><code>tasks_list</code><span>Summaries per Effort</span></li>
+          <li><code>tasks_get</code><span>Full task detail</span></li>
+          <li><code>files_path</code><span>Resolve a folder path</span></li>
+          <li><code>tasks_create</code><span>Add a task</span></li>
+          <li><code>tasks_update</code><span>Patch fields, claim work</span></li>
+          <li><code>tasks_complete</code><span>Finish or reopen</span></li>
+        </ul>
+
+        <div class="feature__points">
+          <div class="point">
+            <h3>One surface, full parity</h3>
+            <p>An always-on <strong>JXA Automation</strong> surface (AppleScript /
+              JavaScript for Automation) drives the same store the UI uses, so there's
+              a single writer by construction — every agent command and every click lands
+              in one consistent state.</p>
+          </div>
+          <div class="point">
+            <h3>Sane trust model</h3>
+            <p>The write surface is tasks-only — no Effort create/delete, no file
+              mutation, no task deletion. The JXA Automation surface is TCC-gated per
+              sender, so macOS asks before any agent is allowed in.</p>
+          </div>
+        </div>
+      </div>
+
+      <figure class="feature__visual shot shot--code" data-caption="Agent surface — terminal">
+        <div class="shot__placeholder shot__placeholder--code">
+<pre><span class="c"># List efforts from the shell via JXA</span>
+osascript -l JavaScript <span class="s">-e</span> \
+  <span class="s">'const a=Application("LocalCortex");</span>
+<span class="s">   a.listEfforts()'</span>
+
+<span class="c"># Create a task in an Effort</span>
+osascript -l JavaScript <span class="s">-e</span> \
+  <span class="s">'const a=Application("LocalCortex");</span>
+<span class="s">   a.createTask("Ship the brief", {effort:"August Launch"})'</span></pre>
+        </div>
+      </figure>
+    </div>
+  </section>
+  </div><!-- /features-panel-agent -->
 
 </main>
 
@@ -382,6 +389,6 @@ osascript -l JavaScript <span class="s">-e</span> \
   </div>
 </footer>
 
-<script src="js/main.js" defer></script>
+<script src="js/main.js?v=2" defer></script>
 </body>
 </html>

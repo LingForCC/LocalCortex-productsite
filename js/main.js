@@ -82,6 +82,49 @@
   });
 
   /* ---------------------------------------------------------------
+     Feature audience tabs (For Human / For Agent)
+     ---------------------------------------------------------------- */
+  var featureTabs = document.querySelectorAll(".feature-tab");
+  var featurePanels = document.querySelectorAll(".feature-panel");
+
+  var setFeaturePanel = function (id) {
+    featureTabs.forEach(function (t) {
+      var on = t.getAttribute("aria-controls") === id;
+      t.classList.toggle("is-active", on);
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.setAttribute("tabindex", on ? "0" : "-1");
+    });
+    featurePanels.forEach(function (p) {
+      p.hidden = p.id !== id;
+      // Sections inside a hidden panel never intersect the reveal observer.
+      if (!p.hidden) {
+        p.querySelectorAll(".reveal:not(.is-visible)").forEach(function (el) {
+          el.classList.add("is-visible");
+        });
+      }
+    });
+  };
+
+  featureTabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      setFeaturePanel(tab.getAttribute("aria-controls"));
+    });
+  });
+
+  // In-page links that target a section inside a panel activate that panel first.
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener("click", function () {
+      var target = document.getElementById(a.getAttribute("href").slice(1));
+      var panel = target ? target.closest(".feature-panel") : null;
+      if (panel && panel.hidden) setFeaturePanel(panel.id);
+      else if (target && target.classList.contains("feature-tabs")) {
+        // The tab bar itself: return to the default (For Human) view.
+        setFeaturePanel(featurePanels[0].id);
+      }
+    });
+  });
+
+  /* ---------------------------------------------------------------
      Scroll reveal (respects prefers-reduced-motion)
      ---------------------------------------------------------------- */
   var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
