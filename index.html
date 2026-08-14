@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LocalCortex — Your tasks. Your real project folders.</title>
+  <title>LocalCortex — Your personal tasks. Your agents' tasks. One app.</title>
   <meta name="description" content="LocalCortex is a native macOS and iOS task manager built around Efforts — each Effort pairs a task list with a real folder on disk. Built for people who work alongside coding agents.">
   <meta name="theme-color" content="#6366F1">
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="LocalCortex — Your tasks. Your real project folders.">
+  <meta property="og:title" content="LocalCortex — Your personal tasks. Your agents' tasks. One app.">
   <meta property="og:description" content="A native Mac and iOS task manager where every project pairs a task list with a real folder on disk. CloudKit sync, a first-class agent surface, and you own your files.">
   <meta property="og:image" content="assets/icon.svg">
   <meta name="twitter:card" content="summary_large_image">
@@ -36,11 +36,10 @@
     <nav class="nav__links" aria-label="Primary">
       <a href="#features">Features</a>
       <a href="#agent">For agents</a>
-      <a href="#download">Download</a>
     </nav>
 
     <a class="btn btn--primary btn--sm nav__cta"
-       href="#download" data-testflight>Join the TestFlight</a>
+       href="#" data-testflight>Join the TestFlight</a>
 
     <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMobile">
       <span class="nav__toggle-bar"></span>
@@ -53,8 +52,7 @@
   <div class="nav__mobile" id="navMobile" hidden>
     <a href="#features">Features</a>
     <a href="#agent">For agents</a>
-    <a href="#download">Download</a>
-    <a class="btn btn--primary" href="#download" data-testflight>Join the TestFlight</a>
+    <a class="btn btn--primary" href="#" data-testflight>Join the TestFlight</a>
   </div>
 </header>
 
@@ -67,7 +65,8 @@
     <div class="hero__inner">
       <div class="hero__text">
         <img src="assets/icon.svg" alt="LocalCortex app icon" class="hero__icon" width="96" height="96">
-        <h1 class="hero__title">Your tasks.<br>Your real project folders.</h1>
+        <p class="eyebrow eyebrow--accent">For humans &amp; the agents they work with</p>
+        <h1 class="hero__title">Your personal tasks.<br>Your agents' tasks.<br>One app.</h1>
         <p class="hero__sub">
           LocalCortex is a native Mac &amp; iOS task manager built around
           <strong>Efforts</strong> — each one pairs a task list with a real folder on
@@ -75,7 +74,7 @@
           first-class surface for the coding agents you work with.
         </p>
         <div class="hero__actions">
-          <a class="btn btn--primary btn--lg" href="#download" data-testflight>Join the TestFlight</a>
+          <a class="btn btn--primary btn--lg" href="#" data-testflight>Join the TestFlight</a>
           <a class="btn btn--ghost btn--lg" href="#features">See the features</a>
         </div>
         <p class="hero__meta">macOS 26.5+ &nbsp;·&nbsp; iOS 18+ &nbsp;·&nbsp; CloudKit sync</p>
@@ -165,52 +164,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Three-pane workspace -->
-  <section class="feature" id="workspace" aria-labelledby="workspace-title">
-    <div class="feature__inner">
-      <div class="feature__text">
-        <p class="eyebrow">The workspace</p>
-        <h2 class="feature__title" id="workspace-title">A native three-pane that adapts to every screen.</h2>
-        <p class="feature__lede">
-          Sidebar, task list, detail — the layout you expect from a Mac app, with an
-          iPad that grows into it and an iPhone that moves between them with a push.
-        </p>
-        <div class="feature__points">
-          <div class="point">
-            <h3>Built in SwiftUI</h3>
-            <p>Three columns on Mac and iPad, a single adaptive stack on iPhone. Same
-              models, same sync, genuinely native on each.</p>
-          </div>
-          <div class="point">
-            <h3>Drag, drop, reorder</h3>
-            <p>Reorder tasks, reparent subtasks, and move work across Efforts with drag
-              and drop on macOS.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Platform tabs: Mac / iOS -->
-      <figure class="feature__visual shot shot--tabbed" data-caption="Three-pane workspace">
-        <div class="shot__tabs" role="tablist" aria-label="Workspace platform">
-          <button class="shot__tab is-active" role="tab" aria-selected="true" data-platform="mac">Mac</button>
-          <button class="shot__tab" role="tab" aria-selected="false" data-platform="ios">iPad / iPhone</button>
-        </div>
-        <div class="shot shot--mac shot__panel is-active" data-panel="mac">
-          <div class="shot__placeholder">
-            <span class="shot__label">Three-pane</span>
-            <span class="shot__hint">Mac · 1440×900</span>
-          </div>
-        </div>
-        <div class="shot shot--ios shot__panel" data-panel="ios" hidden>
-          <div class="shot__placeholder">
-            <span class="shot__label">Three-pane</span>
-            <span class="shot__hint">iPad · 1366×1024</span>
-          </div>
-        </div>
-      </figure>
     </div>
   </section>
 
@@ -382,61 +335,6 @@ osascript -l JavaScript <span class="s">-e</span> \
     </div>
   </section>
 
-  <!-- =========================================================== -->
-  <!-- DOWNLOAD                                                    -->
-  <!-- =========================================================== -->
-  <section class="download" id="download" aria-labelledby="download-title">
-    <div class="download__inner">
-      <h2 class="section-title" id="download-title">Get LocalCortex.</h2>
-      <p class="section-lede">In TestFlight now. Coming soon to the App Store.</p>
-
-      <div class="platforms">
-        <!--
-          TESTFLIGHT PLACEHOLDER
-          Replace the href below (and every [data-testflight] link picks it up via
-          js/main.js TESTFLIGHT_URL). When the App Store ships, swap for store URLs.
-        -->
-        <article class="platform">
-          <div class="platform__icon platform__icon--mac" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M2 5.5a2 2 0 0 1 2-2h6.5v6.2H2V5.5Zm0 5.7h8.5V20.5H4a2 2 0 0 1-2-2v-7.3Zm10-7.7H20a2 2 0 0 1 2 2v4.2h-8.5V3.5Zm0 7.7H22v7.3a2 2 0 0 1-2 2h-7.5v-9.3Z"/></svg>
-          </div>
-          <h3 class="platform__name">For Mac</h3>
-          <p class="platform__req">macOS 26.5 or later</p>
-          <p class="platform__note">Three-pane workspace, folders, and the agent surface.</p>
-          <a class="btn btn--store" href="#" data-testflight>
-            <span class="btn__store-top">Coming Soon</span>
-            <span class="btn__store-bottom">Join TestFlight</span>
-          </a>
-        </article>
-
-        <article class="platform">
-          <div class="platform__icon platform__icon--ios" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm3 17a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2h-4Z"/></svg>
-          </div>
-          <h3 class="platform__name">For iPhone</h3>
-          <p class="platform__req">iOS 18 or later</p>
-          <p class="platform__note">Efforts and tasks in your pocket, synced over CloudKit.</p>
-          <a class="btn btn--store" href="#" data-testflight>
-            <span class="btn__store-top">Coming Soon</span>
-            <span class="btn__store-bottom">Join TestFlight</span>
-          </a>
-        </article>
-
-        <article class="platform">
-          <div class="platform__icon platform__icon--ios" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M3 4h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-6l.7 3h1.8a.5.5 0 0 1 0 1H6.5a.5.5 0 0 1 0-1h1.8L9 17H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"/></svg>
-          </div>
-          <h3 class="platform__name">For iPad</h3>
-          <p class="platform__req">iPadOS 18 or later</p>
-          <p class="platform__note">The full three-pane layout, scaled up.</p>
-          <a class="btn btn--store" href="#" data-testflight>
-            <span class="btn__store-top">Coming Soon</span>
-            <span class="btn__store-bottom">Join TestFlight</span>
-          </a>
-        </article>
-      </div>
-    </div>
-  </section>
 
 </main>
 
@@ -458,7 +356,6 @@ osascript -l JavaScript <span class="s">-e</span> \
       <ul>
         <li><a href="#features">Features</a></li>
         <li><a href="#agent">For agents</a></li>
-        <li><a href="#download">Download</a></li>
       </ul>
     </div>
 
@@ -466,7 +363,7 @@ osascript -l JavaScript <span class="s">-e</span> \
       <h4>Resources</h4>
       <ul>
         <li><a href="https://github.com/LingForCC/LocalCortex---Swift" rel="noopener">GitHub</a></li>
-        <li><a href="#download">TestFlight</a></li>
+        <li><a href="#" data-testflight>TestFlight</a></li>
       </ul>
     </div>
 
