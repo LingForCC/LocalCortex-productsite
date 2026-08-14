@@ -124,6 +124,20 @@
     });
   });
 
+  // On load, For Human is the default. A hash that points inside a panel
+  // (e.g. #agent from the footer) activates that panel instead.
+  var applyPanelFromHash = function () {
+    var hash = window.location.hash.slice(1);
+    var target = hash ? document.getElementById(hash) : null;
+    var panel = target ? target.closest(".feature-panel") : null;
+    setFeaturePanel(panel ? panel.id : featurePanels[0].id);
+  };
+  applyPanelFromHash();
+  // Back/forward cache restores the previous panel state; re-apply the default.
+  window.addEventListener("pageshow", function (e) {
+    if (e.persisted) applyPanelFromHash();
+  });
+
   /* ---------------------------------------------------------------
      Scroll reveal (respects prefers-reduced-motion)
      ---------------------------------------------------------------- */

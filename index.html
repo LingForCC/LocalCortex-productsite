@@ -18,7 +18,7 @@
   <link rel="apple-touch-icon" href="assets/icon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/styles.css?v=4">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -35,7 +35,6 @@
 
     <nav class="nav__links" aria-label="Primary">
       <a href="#features">Features</a>
-      <a href="#agent">For agents</a>
     </nav>
 
     <a class="btn btn--primary btn--sm nav__cta"
@@ -51,7 +50,6 @@
   <!-- Mobile menu -->
   <div class="nav__mobile" id="navMobile" hidden>
     <a href="#features">Features</a>
-    <a href="#agent">For agents</a>
     <a class="btn btn--primary" href="#" data-testflight>Join the TestFlight</a>
   </div>
 </header>
@@ -287,10 +285,10 @@
   <div class="feature-panel" id="features-panel-agent" role="tabpanel" aria-labelledby="features-tab-agent" hidden>
 
   <!-- AGENT SURFACE (the differentiator) -->
-  <section class="feature feature--agent" id="agent" aria-labelledby="agent-title">
+  <section class="feature" id="agent" aria-labelledby="agent-title">
     <div class="feature__inner">
       <div class="feature__text">
-        <p class="eyebrow eyebrow--accent">For coding agents</p>
+        <p class="eyebrow">Agent surface</p>
         <h2 class="feature__title" id="agent-title">Your agents can read your tasks and find your files.</h2>
         <p class="feature__lede">
           LocalCortex exposes a first-class automation surface on macOS. Claude Code,
@@ -317,12 +315,6 @@
               a single writer by construction — every agent command and every click lands
               in one consistent state.</p>
           </div>
-          <div class="point">
-            <h3>Sane trust model</h3>
-            <p>The write surface is tasks-only — no Effort create/delete, no file
-              mutation, no task deletion. The JXA Automation surface is TCC-gated per
-              sender, so macOS asks before any agent is allowed in.</p>
-          </div>
         </div>
       </div>
 
@@ -339,6 +331,49 @@ osascript -l JavaScript <span class="s">-e</span> \
 <span class="s">   a.createTask("Ship the brief", {effort:"August Launch"})'</span></pre>
         </div>
       </figure>
+    </div>
+  </section>
+
+  <!-- Agent plugins -->
+  <section class="feature feature--alt" id="plugins" aria-labelledby="plugins-title">
+    <div class="feature__inner">
+      <figure class="feature__visual shot shot--code" data-caption="Agent plugins — install &amp; run">
+        <div class="shot__placeholder shot__placeholder--code">
+<pre><span class="c"># One-time install, per agent CLI</span>
+/plugin marketplace add ~/Repos/LocalCortex---Plugins/claude-plugin
+/plugin install localcortex@localcortex-plugins
+
+<span class="c"># Then just ask, in any session:</span>
+<span class="s">"Set up 'August Launch' from the Launch Checklist template."</span>
+<span class="s">"Orchestrate 'August Launch' — poll every 5 minutes."</span></pre>
+        </div>
+      </figure>
+
+      <div class="feature__text">
+        <p class="eyebrow">Agent plugins</p>
+        <h2 class="feature__title" id="plugins-title">Templates plan the work. Agents run it.</h2>
+        <p class="feature__lede">
+          Install the <a href="https://github.com/LingForCC/LocalCortex---Plugins" rel="noopener">LocalCortex plugins</a>
+          into Claude Code, Codex, ZCode, Kimi, or OpenCode. Your agent can materialize
+          an Effort's tasks from a <strong>Template</strong> you define in the app —
+          then work the list, or hand every agent its part on a schedule.
+        </p>
+        <div class="feature__points">
+          <div class="point">
+            <h3>From template to task list</h3>
+            <p>Name a Template in the app and the plugin turns its prompt into roots,
+              subtasks, assignments, and blocked-by relationships in any Effort.</p>
+          </div>
+          <div class="point">
+            <h3>Orchestrate the roster</h3>
+            <p>Run every agent's open work two ways: on a schedule — the orchestrator
+              polls the Effort every five minutes and spawns each agent's CLI
+              (opencode, kimi, codex, or claude code) headless — or in goal mode,
+              looping in your session and dispatching until the Effort's work is done,
+              then stopping on its own. The roster lives in the app, not in prompts.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   </div><!-- /features-panel-agent -->
@@ -389,6 +424,6 @@ osascript -l JavaScript <span class="s">-e</span> \
   </div>
 </footer>
 
-<script src="js/main.js?v=2" defer></script>
+<script src="js/main.js?v=3" defer></script>
 </body>
 </html>

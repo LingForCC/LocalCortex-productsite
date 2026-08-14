@@ -265,17 +265,26 @@ code, kbd, pre { font-family: var(--mono); }
 }
 .feature__lede strong { color: var(--text); }
 
+/* Inline links inside feature copy (lede, points) */
+.feature__lede a,
+.point a {
+  color: var(--brand-1); font-weight: 600;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.feature__lede a:hover,
+.point a:hover { color: var(--brand-2); }
+@media (prefers-color-scheme: dark) {
+  .feature__lede a,
+  .point a { color: #93a8f7; }
+  .feature__lede a:hover,
+  .point a:hover { color: #a5b4fc; }
+}
+
 .feature__points { display: flex; flex-direction: column; gap: 22px; }
 .point h3 { font-size: 1.02rem; font-weight: 650; margin-bottom: 6px; }
 .point p { color: var(--text-muted); font-size: .97rem; }
 
-/* ---------- Agent section ---------- */
-.feature--agent {
-  background: var(--brand-soft);
-  border-top-color: transparent;
-}
-.feature--agent .feature__title { background: var(--brand-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-
+/* ---------- Tool grid (agent surface) ---------- */
 .tool-grid {
   display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px;
   margin: 8px 0 32px;
