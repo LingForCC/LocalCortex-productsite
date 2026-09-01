@@ -3,21 +3,25 @@ from urllib.parse import urlsplit
 
 
 class LocalCortexHandler(SimpleHTTPRequestHandler):
-    """Serve the static site and keep the privacy page at its clean URL."""
+    """Serve the static site and keep support pages at their clean URLs."""
 
     def do_GET(self):
         path = urlsplit(self.path).path
 
-        if path == "/privacy":
+        if path in ("/privacy", "/support"):
             self.send_response(301)
-            self.send_header("Location", "/privacy/")
+            self.send_header("Location", path + "/")
             self.end_headers()
             return
 
-        if path == "/privacy/":
+        clean_pages = {
+            "/privacy/": "/privacy.html",
+            "/support/": "/support.html",
+        }
+        if path in clean_pages:
             original_path = self.path
             parsed = urlsplit(self.path)
-            self.path = "/privacy.html"
+            self.path = clean_pages[path]
             if parsed.query:
                 self.path += "?" + parsed.query
             try:
