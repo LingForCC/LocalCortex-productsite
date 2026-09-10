@@ -409,28 +409,6 @@ code, kbd, pre { font-family: var(--mono); }
 .section-lede { text-align: center; color: var(--text-muted); font-size: 1.08rem; margin-bottom: 56px; }
 
 /* =================================================================
-   SMALL THINGS GRID
-   ================================================================= */
-.small-things { padding: 90px 24px; background: var(--bg); border-top: 1px solid var(--border); }
-.small-things__inner { max-width: var(--maxw); margin: 0 auto; }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: 18px;
-}
-.grid__item {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  padding: 24px 22px;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-}
-.grid__item:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--border-strong); }
-.grid__item h3 { font-size: 1.02rem; font-weight: 650; margin-bottom: 8px; }
-.grid__item p { font-size: .92rem; color: var(--text-muted); }
-
-/* =================================================================
    DOWNLOAD
    ================================================================= */
 .download {
@@ -501,7 +479,7 @@ code, kbd, pre { font-family: var(--mono); }
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; }
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
-  .btn, .platform, .grid__item { transition: none !important; }
+  .btn, .platform { transition: none !important; }
 }
 
 /* =================================================================
@@ -513,7 +491,6 @@ code, kbd, pre { font-family: var(--mono); }
   .feature__inner { grid-template-columns: 1fr; gap: 40px; }
   .feature--alt .feature__text,
   .feature--alt .feature__visual { order: 0; }
-  .grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .platforms { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
   .platform__note { min-height: 0; }
 }
@@ -537,10 +514,9 @@ code, kbd, pre { font-family: var(--mono); }
 }
 
 @media (max-width: 480px) {
-  .grid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr 1fr; gap: 28px; }
   .footer__col--brand { grid-column: 1 / -1; }
-  .feature, .small-things, .download { padding: 64px 20px; }
+  .feature, .download { padding: 64px 20px; }
 }
 
 /* =================================================================

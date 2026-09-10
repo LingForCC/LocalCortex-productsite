@@ -18,7 +18,7 @@
   <link rel="apple-touch-icon" href="assets/icon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="css/styles.css?v=6">
+  <link rel="stylesheet" href="css/styles.css?v=7">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -273,50 +273,6 @@
     </div>
   </section>
 
-  <!-- =========================================================== -->
-  <!-- SMALL THINGS GRID                                           -->
-  <!-- =========================================================== -->
-  <section class="small-things" aria-labelledby="small-title">
-    <div class="small-things__inner">
-      <h2 class="section-title" id="small-title">And all the small things.</h2>
-      <p class="section-lede">The details that make a task manager feel finished.</p>
-
-      <ul class="grid">
-        <li class="grid__item">
-          <h3>Recurring tasks</h3>
-          <p>Daily, weekly, monthly, yearly — with weekday-aware patterns.</p>
-        </li>
-        <li class="grid__item">
-          <h3>Subtask cascades</h3>
-          <p>Complete a parent to finish the tree; reopen a child to wake its ancestors.</p>
-        </li>
-        <li class="grid__item">
-          <h3>Drag &amp; drop</h3>
-          <p>Reorder, reparent, and move tasks between Efforts on macOS.</p>
-        </li>
-        <li class="grid__item">
-          <h3>Worker markers</h3>
-          <p>See at a glance whether a task is yours, an agent's, or unclaimed.</p>
-        </li>
-        <li class="grid__item">
-          <h3>Full dark mode</h3>
-          <p>Light and dark themes that track the system, tuned for long sessions.</p>
-        </li>
-        <li class="grid__item">
-          <h3>Built in Swift 6</h3>
-          <p>Strict concurrency, SwiftData, and SwiftUI — modern and native to the core.</p>
-        </li>
-        <li class="grid__item">
-          <h3>Stable Effort colors</h3>
-          <p>Each Effort gets a deterministic hue, consistent across devices.</p>
-        </li>
-        <li class="grid__item">
-          <h3>Reminders</h3>
-          <p>Timely nudges so a due date never slips past unnoticed.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
   </div><!-- /features-panel-human -->
 
   <!-- Panel: features for agents -->
@@ -375,15 +331,10 @@ osascript -l JavaScript <span class="s">-e</span> \
   <!-- Agent plugins -->
   <section class="feature feature--alt" id="plugins" aria-labelledby="plugins-title">
     <div class="feature__inner">
-      <figure class="feature__visual shot shot--code" data-caption="Agent plugins — install &amp; run">
-        <div class="shot__placeholder shot__placeholder--code">
-<pre><span class="c"># One-time install, per agent CLI</span>
-/plugin marketplace add ~/Repos/LocalCortex---Plugins/claude-plugin
-/plugin install localcortex@localcortex-plugins
-
-<span class="c"># Then just ask, in any session:</span>
-<span class="s">"Set up 'August Launch' from the Launch Checklist template."</span>
-<span class="s">"Orchestrate 'August Launch' — poll every 5 minutes."</span></pre>
+      <figure class="feature__visual shot shot--mac" data-caption="Agent plugins — Mac">
+        <div class="shot__placeholder">
+          <span class="shot__label">Agent plugins</span>
+          <span class="shot__hint">Mac · 1440×900</span>
         </div>
       </figure>
 
@@ -404,11 +355,10 @@ osascript -l JavaScript <span class="s">-e</span> \
           </div>
           <div class="point">
             <h3>Orchestrate the roster</h3>
-            <p>Run every agent's open work two ways: on a schedule — the orchestrator
-              polls the Effort every five minutes and spawns each agent's CLI
-              (opencode, kimi, codex, or claude code) headless — or in goal mode,
-              looping in your session and dispatching until the Effort's work is done,
-              then stopping on its own. The roster lives in the app, not in prompts.</p>
+            <p>Run every agent's open work in goal mode: it loops in your
+              session, dispatching each agent's part until the Effort's work is
+              done, then stops on its own. The roster lives in the app, not in
+              prompts.</p>
           </div>
         </div>
       </div>

@@ -125,7 +125,7 @@
      ---------------------------------------------------------------- */
   var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var revealTargets = document.querySelectorAll(
-    ".feature, .small-things, .download, .hero__text, .hero__visual"
+    ".feature, .download, .hero__text, .hero__visual"
   );
   if (prefersReduced || !("IntersectionObserver" in window)) {
     revealTargets.forEach(function (el) { el.classList.add("is-visible"); });
