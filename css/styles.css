@@ -376,12 +376,20 @@ code, kbd, pre { font-family: var(--mono); }
 .shot__panel:not(.is-active) { display: none; }
 
 /* Feature audience tabs (For Human / For Agent) */
-.feature-tabs-wrap { padding: 0 24px 38px; }
+.feature-tabs-wrap {
+  position: sticky; top: var(--nav-h); z-index: 90;
+  padding: 12px 24px 38px;
+}
+.feature-tabs-wrap.is-stuck {
+  background: var(--bg);
+  box-shadow: 0 14px 28px -20px rgba(20, 20, 60, .35);
+}
 .feature-tabs {
   display: flex; justify-content: center; gap: 4px;
   background: var(--bg-tinted); border: 1px solid var(--border);
   border-radius: 999px; padding: 4px;
   width: max-content; margin: 0 auto;
+  scroll-margin-top: calc(var(--nav-h) + 12px);
 }
 .feature-tab {
   padding: 10px 30px; border-radius: 999px;

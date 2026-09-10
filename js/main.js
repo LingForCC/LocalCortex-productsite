@@ -18,6 +18,26 @@
   window.addEventListener("scroll", onScroll, { passive: true });
 
   /* ---------------------------------------------------------------
+     Feature tab bar: solid background while pinned under the nav
+     ---------------------------------------------------------------- */
+  var tabsWrap = document.querySelector(".feature-tabs-wrap");
+  var onTabsScroll = function () {
+    if (!tabsWrap) return;
+    var navH = parseFloat(
+      getComputedStyle(document.documentElement).getPropertyValue("--nav-h")
+    ) || 64;
+    // A sticky element's viewport top never passes its sticky offset,
+    // so reaching it means the bar is pinned.
+    tabsWrap.classList.toggle(
+      "is-stuck",
+      tabsWrap.getBoundingClientRect().top <= navH + 1
+    );
+  };
+  onTabsScroll();
+  window.addEventListener("scroll", onTabsScroll, { passive: true });
+  window.addEventListener("resize", onTabsScroll);
+
+  /* ---------------------------------------------------------------
      Mobile menu toggle
      ---------------------------------------------------------------- */
   var navToggle = document.getElementById("navToggle");
