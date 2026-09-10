@@ -1,25 +1,10 @@
 /* =================================================================
    LocalCortex — product site
    Vanilla JS, no dependencies. Handles: nav state, mobile menu,
-   platform tabs, scroll reveal, and the TestFlight link source-of-truth.
+   platform tabs, and scroll reveal.
    ================================================================= */
 (function () {
   "use strict";
-
-  /* ---------------------------------------------------------------
-     TESTFLIGHT / DOWNLOAD LINK — single source of truth.
-     Change this ONE value and every [data-testflight] button updates.
-     ---------------------------------------------------------------- */
-  const TESTFLIGHT_URL = "#"; // <-- replace with your TestFlight / store URL
-
-  document.querySelectorAll("[data-testflight]").forEach(function (el) {
-    el.setAttribute("href", TESTFLIGHT_URL);
-    // Make it visibly inert until a real URL is set.
-    if (TESTFLIGHT_URL === "#") {
-      el.setAttribute("aria-disabled", "true");
-      el.style.cursor = "default";
-    }
-  });
 
   /* ---------------------------------------------------------------
      Nav: add shadow/border when scrolled
@@ -56,29 +41,6 @@
   });
   window.addEventListener("resize", function () {
     if (window.innerWidth > 720) setMenu(false);
-  });
-
-  /* ---------------------------------------------------------------
-     Platform tabs (Mac / iPad-iPhone) on tabbed shots
-     ---------------------------------------------------------------- */
-  document.querySelectorAll(".shot--tabbed").forEach(function (shot) {
-    var tabs = shot.querySelectorAll(".shot__tab");
-    var panels = shot.querySelectorAll(".shot__panel");
-    tabs.forEach(function (tab) {
-      tab.addEventListener("click", function () {
-        var target = tab.getAttribute("data-platform");
-        tabs.forEach(function (t) {
-          var on = t === tab;
-          t.classList.toggle("is-active", on);
-          t.setAttribute("aria-selected", on ? "true" : "false");
-        });
-        panels.forEach(function (p) {
-          var on = p.getAttribute("data-panel") === target;
-          p.classList.toggle("is-active", on);
-          p.hidden = !on;
-        });
-      });
-    });
   });
 
   /* ---------------------------------------------------------------

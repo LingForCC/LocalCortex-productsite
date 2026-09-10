@@ -342,21 +342,6 @@ code, kbd, pre { font-family: var(--mono); }
   .shot--mac .shot__placeholder::before { background: #1c1c22; }
 }
 
-/* iOS device frame */
-.shot--ios { display: flex; justify-content: center; }
-.shot--ios .shot__placeholder {
-  border-radius: 38px;
-  aspect-ratio: 9 / 19.5;
-  width: 75%; max-width: 280px;
-  min-height: auto;
-  border: 8px solid #0c0c10;
-  box-shadow: var(--shadow-lg);
-  padding-top: 14px;
-}
-.shot--ios .shot__placeholder::before {
-  content: ""; position: absolute;
-}
-
 /* Hero collage */
 .shot--hero { padding: 0; }
 .shot--hero .shot__placeholder--collage {

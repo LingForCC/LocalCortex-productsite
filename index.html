@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LocalCortex — Your personal tasks. Your agents' tasks. One app.</title>
-  <meta name="description" content="LocalCortex is a native macOS and iOS task manager built around Efforts — each Effort pairs a task list with a real folder on disk. Built for people who work alongside coding agents.">
+  <meta name="description" content="LocalCortex is a native macOS task manager built around Efforts — each Effort pairs a task list with a real folder on disk. Built for people who work alongside coding agents.">
   <meta name="theme-color" content="#6366F1">
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="LocalCortex — Your personal tasks. Your agents' tasks. One app.">
-  <meta property="og:description" content="A native Mac and iOS task manager where every project pairs a task list with a real folder on disk. CloudKit sync, a first-class agent surface, and you own your files.">
+  <meta property="og:description" content="A native Mac task manager where every project pairs a task list with a real folder on disk. CloudKit sync, a first-class agent surface, and you own your files.">
   <meta property="og:image" content="assets/icon.svg">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -18,7 +18,7 @@
   <link rel="apple-touch-icon" href="assets/icon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="css/styles.css?v=4">
+  <link rel="stylesheet" href="css/styles.css?v=5">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -38,7 +38,7 @@
     </nav>
 
     <a class="btn btn--primary btn--sm nav__cta"
-       href="#" data-testflight>Join the TestFlight</a>
+       href="https://apps.apple.com/cn/app/localcortex/id6794754379" rel="noopener">Download on the App Store</a>
 
     <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMobile">
       <span class="nav__toggle-bar"></span>
@@ -50,7 +50,7 @@
   <!-- Mobile menu -->
   <div class="nav__mobile" id="navMobile" hidden>
     <a href="#features">Features</a>
-    <a class="btn btn--primary" href="#" data-testflight>Join the TestFlight</a>
+    <a class="btn btn--primary" href="https://apps.apple.com/cn/app/localcortex/id6794754379" rel="noopener">Download on the App Store</a>
   </div>
 </header>
 
@@ -66,23 +66,23 @@
         <p class="eyebrow eyebrow--accent">For humans &amp; the agents they work with</p>
         <h1 class="hero__title">Your personal tasks.<br>Your agents' tasks.<br>One app.</h1>
         <p class="hero__sub">
-          LocalCortex is a native Mac &amp; iOS task manager built around
+          LocalCortex is a native Mac task manager built around
           <strong>Efforts</strong> — each one pairs a task list with a real folder on
           disk. CloudKit keeps everything in sync, you own every byte, and there's a
           first-class surface for the coding agents you work with.
         </p>
         <div class="hero__actions">
-          <a class="btn btn--primary btn--lg" href="#" data-testflight>Join the TestFlight</a>
+          <a class="btn btn--primary btn--lg" href="https://apps.apple.com/cn/app/localcortex/id6794754379" rel="noopener">Download on the App Store</a>
           <a class="btn btn--ghost btn--lg" href="#features">See the features</a>
         </div>
-        <p class="hero__meta">macOS 26.5+ &nbsp;·&nbsp; iOS 18+</p>
+        <p class="hero__meta">macOS 26.5+</p>
       </div>
 
-      <!-- Hero visual drop-zone (Mac + iPhone collage). See assets/screenshots/README.md -->
-      <figure class="hero__visual shot shot--hero" data-caption="LocalCortex across Mac, iPad, and iPhone">
+      <!-- Hero visual drop-zone (Mac screenshot). See assets/screenshots/README.md -->
+      <figure class="hero__visual shot shot--hero" data-caption="LocalCortex for Mac">
         <div class="shot__placeholder shot__placeholder--collage">
           <span class="shot__label">LocalCortex</span>
-          <span class="shot__hint">Hero collage · Mac + iPad + iPhone</span>
+          <span class="shot__hint">Hero shot · Mac</span>
         </div>
       </figure>
     </div>
@@ -215,10 +215,10 @@
   <!-- Sync -->
   <section class="feature feature--alt" id="sync" aria-labelledby="sync-title">
     <div class="feature__inner">
-      <figure class="feature__visual shot shot--ios" data-caption="Sync across devices">
+      <figure class="feature__visual shot shot--mac" data-caption="Sync across your Macs">
         <div class="shot__placeholder">
           <span class="shot__label">Synced everywhere</span>
-          <span class="shot__hint">iPhone · 1170×2532</span>
+          <span class="shot__hint">Mac · 1440×900</span>
         </div>
       </figure>
 
@@ -226,7 +226,7 @@
         <p class="eyebrow">CloudKit sync</p>
         <h2 class="feature__title" id="sync-title">Structured data syncs. You own the bytes.</h2>
         <p class="feature__lede">
-          Efforts and Tasks sync across your Mac, iPhone, and iPad through CloudKit —
+          Efforts and Tasks sync across your Macs through CloudKit —
           private to your account, no servers of ours in the middle. Files are a
           separate, deliberate choice.
         </p>
@@ -436,7 +436,6 @@ osascript -l JavaScript <span class="s">-e</span> \
       <h4>Product</h4>
       <ul>
         <li><a href="#features">Features</a></li>
-        <li><a href="#agent">For agents</a></li>
       </ul>
     </div>
 
@@ -444,8 +443,6 @@ osascript -l JavaScript <span class="s">-e</span> \
       <h4>Resources</h4>
       <ul>
         <li><a href="support.html">Support</a></li>
-        <li><a href="https://github.com/LingForCC/LocalCortex---Swift" rel="noopener">GitHub</a></li>
-        <li><a href="#" data-testflight>TestFlight</a></li>
       </ul>
     </div>
 
@@ -453,7 +450,6 @@ osascript -l JavaScript <span class="s">-e</span> \
       <h4>Legal</h4>
       <ul>
         <li><a href="privacy.html">Privacy</a></li>
-        <li><a href="#">Terms</a></li>
       </ul>
     </div>
   </div>
