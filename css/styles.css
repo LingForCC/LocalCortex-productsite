@@ -299,7 +299,7 @@ code, kbd, pre { font-family: var(--mono); }
 .tool-grid span { font-size: .8rem; color: var(--text-muted); }
 
 /* =================================================================
-   SHOTS — device-framed screenshot placeholders
+   SHOTS — screenshot slots (placeholder until the PNG is dropped in)
    ================================================================= */
 .shot {
   border-radius: var(--r-lg);
@@ -317,37 +317,15 @@ code, kbd, pre { font-family: var(--mono); }
 .shot__label { font-weight: 700; font-size: 1.05rem; color: var(--text-soft); }
 .shot__hint { font-size: .82rem; }
 
-/* Mac window chrome */
-.shot--mac .shot__placeholder {
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-lg);
-  position: relative;
-  padding-top: 30px;
-}
-.shot--mac .shot__placeholder::before {
-  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 30px;
-  background: linear-gradient(var(--bg-elevated), var(--bg-elevated));
-  border-bottom: 1px solid var(--border);
-}
-.shot--mac .shot__placeholder::after {
-  /* traffic lights */
-  content: ""; position: absolute; top: 10px; left: 14px;
-  width: 52px; height: 10px;
-  background-image:
-    radial-gradient(circle at 6px 5px, #ff5f57 5px, transparent 6px),
-    radial-gradient(circle at 26px 5px, #febc2e 5px, transparent 6px),
-    radial-gradient(circle at 46px 5px, #28c840 5px, transparent 6px);
-}
-@media (prefers-color-scheme: dark) {
-  .shot--mac .shot__placeholder::before { background: #1c1c22; }
+/* Embedded screenshot: plain image, no device chrome */
+.shot img {
+  display: block;
+  width: 100%; height: auto;
 }
 
-/* Hero collage */
-.shot--hero { padding: 0; }
-.shot--hero .shot__placeholder--collage {
+/* Hero collage placeholder */
+.shot__placeholder--collage {
   min-height: 380px; aspect-ratio: 4 / 3;
-  border-radius: var(--r-xl);
-  box-shadow: var(--shadow-lg);
 }
 
 /* Code panel */

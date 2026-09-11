@@ -143,6 +143,33 @@
   }
 
   /* ---------------------------------------------------------------
+     Screenshots: pick up assets/screenshots/<data-shot>.{png,jpg,webp}
+     Each figure keeps its placeholder until the file exists, so the
+     page works out of the box and shows real screenshots as soon as
+     they are dropped into assets/screenshots/.
+     ---------------------------------------------------------------- */
+  var shotFigs = document.querySelectorAll("figure[data-shot]");
+  var shotExts = ["png", "jpg", "webp"];
+  shotFigs.forEach(function (fig) {
+    var name = fig.getAttribute("data-shot");
+    var tryExt = function (i) {
+      if (i >= shotExts.length) return;
+      var probe = new Image();
+      probe.onload = function () {
+        var ph = fig.querySelector(".shot__placeholder");
+        if (!ph) return;
+        var img = document.createElement("img");
+        img.src = probe.src;
+        img.alt = fig.getAttribute("data-caption") || name;
+        fig.replaceChild(img, ph);
+      };
+      probe.onerror = function () { tryExt(i + 1); };
+      probe.src = "assets/screenshots/" + name + "." + shotExts[i];
+    };
+    tryExt(0);
+  });
+
+  /* ---------------------------------------------------------------
      Current year in footer
      ---------------------------------------------------------------- */
   var yearEl = document.getElementById("year");
