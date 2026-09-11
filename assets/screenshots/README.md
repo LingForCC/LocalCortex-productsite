@@ -16,7 +16,6 @@ traffic lights, or bezel is drawn around them, so use clean app/window shots.
 | `efforts-mac.png`        | Efforts section        | 1440 × 900  |
 | `task-detail-mac.png`    | Task detail section    | 1440 × 900  |
 | `agent-activity-mac.png` | Agent activity section | 1440 × 900  |
-| `sync-mac.png`           | Sync across your Macs  | 1440 × 900  |
 | `agent-plugins-mac.png`  | Agent plugins section  | 1440 × 900  |
 
 `.jpg` and `.webp` also work with the same base name (e.g. `sync-mac.jpg`).
