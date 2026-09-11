@@ -438,7 +438,6 @@ code, kbd, pre { font-family: var(--mono); }
 }
 .footer__brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.1rem; margin-bottom: 12px; }
 .footer__logo { border-radius: 6px; }
-.footer__tag { color: var(--text-muted); font-size: .95rem; }
 .footer__col h4 { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-faint); margin-bottom: 14px; }
 .footer__col li { margin-bottom: 9px; }
 .footer__col a { color: var(--text-soft); font-size: .95rem; transition: color .15s ease; }
